@@ -19,9 +19,8 @@ settings = get_settings()
 
 # Password hashing
 pwd_context = CryptContext(
-    schemes=["bcrypt"],
-    deprecated="auto",
-    bcrypt__rounds=settings.BCRYPT_ROUNDS
+    schemes=["argon2"],
+    deprecated="auto"
 )
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
